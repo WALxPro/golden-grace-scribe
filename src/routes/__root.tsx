@@ -1,72 +1,44 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
-  Link,
   createRootRouteWithContext,
-  useRouter,
   HeadContent,
   Scripts,
+  useRouter,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import BackToTop from "../components/BackToTop";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--parchment-light)", padding: 20 }}>
+      <div style={{ textAlign: "center", maxWidth: 480 }}>
+        <h1 style={{ fontFamily: "var(--font-display)", fontSize: 72, color: "var(--navy-deep)" }}>404</h1>
+        <p style={{ fontFamily: "var(--font-body)", color: "var(--navy-soft)", margin: "12px 0 24px" }}>
+          This page has wandered off the mountain path.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <a href="/" className="btn btn-amazon">Return home</a>
       </div>
     </div>
   );
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
-
+  useEffect(() => { reportLovableError(error, { boundary: "root" }); }, [error]);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--parchment-light)", padding: 20 }}>
+      <div style={{ textAlign: "center", maxWidth: 500 }}>
+        <h1 style={{ fontFamily: "var(--font-display)", color: "var(--navy-deep)", fontSize: 32 }}>Something went quiet</h1>
+        <p style={{ fontFamily: "var(--font-body)", color: "var(--navy-soft)", margin: "12px 0 20px" }}>
+          Please try again in a moment.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
-        </div>
+        <button className="btn btn-amazon" onClick={() => { router.invalidate(); reset(); }}>Try again</button>
       </div>
     </div>
   );
@@ -77,21 +49,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Janice Flowers, Author of Life from the Mountain" },
+      { name: "description", content: "Janice Flowers writes heartfelt Christian fiction of faith, healing, and new beginnings. Discover Life from the Mountain, a story of redemption." },
+      { property: "og:title", content: "Janice Flowers, Author of Life from the Mountain" },
+      { property: "og:description", content: "A heartfelt journey of faith, healing, and second chances." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Alex+Brush&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -103,24 +73,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
+      <head><HeadContent /></head>
+      <body>{children}<Scripts /></body>
     </html>
   );
 }
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <Navbar />
+      <main className="page-fade" key={typeof window !== "undefined" ? window.location.pathname : "ssr"}>
+        <Outlet />
+      </main>
+      <Footer />
+      <BackToTop />
     </QueryClientProvider>
   );
 }
