@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import PageBanner from "../components/PageBanner";
 import ScrollReveal from "../components/ScrollReveal";
-import authorPhoto from "../assets/author-photo.jpg";
+import authorPhoto from "../assets/author-photo.jpeg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

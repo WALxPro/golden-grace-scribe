@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import PageBanner from "../components/PageBanner";
 import ScrollReveal from "../components/ScrollReveal";
-import authorPhoto from "../assets/author-photo.jpg";
+import authorPhoto from "../assets/author-photo.jpeg";
 
 export const Route = createFileRoute("/about-author")({
   head: () => ({

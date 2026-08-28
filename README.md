@@ -43,7 +43,7 @@ src/
   main.jsx
   index.css
   assets/
-    author-photo.jpg
+    author-photo.jpeg
     bookcover-front.jpg
     logo.png
   pages/
@@ -370,7 +370,7 @@ Janice Flowers, Author Website
 Setup
 npm install
 Add images to src/assets/:
-author-photo.jpg
+author-photo.jpeg
 bookcover-front.jpg (clean front cover only, no back-cover text)
 logo.png (uploaded transparent logo)
 npm run dev

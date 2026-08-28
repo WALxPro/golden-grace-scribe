@@ -128,7 +128,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 clamp(16px, 4vw, 44px);
 }
-.nav-logo img { height: 58px; width: auto; }
+.nav-logo img { height: 180px; width: auto; }
 .nav-links { display: flex; gap: 34px; align-items: center; }
 .nav-link {
   position: relative;
@@ -196,7 +196,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav { height: 60px; }
-  .nav-logo img { height: 42px; }
+  .nav-logo img { height: 108px; }
 }
 
 /* ===== PAGE BANNER (sunrise gradient, ridgeline, sunburst, particles) ===== */
@@ -762,7 +762,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .footer a:hover .arrow { opacity: 1; transform: translateX(0); }
 .footer ul { list-style: none; }
 .footer li { margin-bottom: 10px; }
-.footer-logo img { height: 58px; margin-bottom: 16px; filter: brightness(1.1); }
+.footer-logo img {
+    filter: brightness(1.1);
+    height: 180px;
+    margin-bottom: -39px;
+    margin-left: -35px;
+    margin-top: -70px;
+}
 .footer-tagline { font-family: var(--font-script); color: var(--gold-light); font-size: 1.6rem; margin: 10px 0; }
 
 .footer-book-thumb {

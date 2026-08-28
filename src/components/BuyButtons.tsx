@@ -15,9 +15,9 @@ function ripple(e: MouseEvent<HTMLAnchorElement>) {
 
 export default function BuyButtons() {
   return (
-    <div className="btn-row">
+    <div className="">
       <a
-        href="https://amazon.com"
+        href="https://www.amazon.com/Time-No-End-Janice-Flowers-ebook/dp/B096X745J8/ref=sr_1_1?crid=38GJ6RNCC7YZF&dib=eyJ2IjoiMSJ9.CSilix9fwAHEpTLLT0NZkQ.8_Fq1judwXL4sp6hb0GhKEuGoJwts7E4GTzgh_rqsLg&dib_tag=se&keywords=A+time+with+no+end+janice+flowers&qid=1787678178&s=books&sprefix=a+time+with+no+end+janice+flowers%2Cstripbooks-intl-ship%2C356&sr=1-1"
         target="_blank"
         rel="noreferrer"
         className="btn btn-amazon"
@@ -25,9 +25,7 @@ export default function BuyButtons() {
       >
         Buy on Amazon
       </a>
-      <a href="#buy-direct" className="btn btn-direct" onClick={ripple}>
-        Buy Directly
-      </a>
+     
     </div>
   );
 }

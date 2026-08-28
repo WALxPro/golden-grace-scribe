@@ -5,7 +5,7 @@ import Book3DTilt from "../components/Book3DTilt";
 import PlatformTicker from "../components/PlatformTicker";
 import ScrollReveal from "../components/ScrollReveal";
 import MessageFromAuthor from "../components/MessageFromAuthor";
-import authorPhoto from "../assets/author-photo.jpg";
+import authorPhoto from "../assets/author-photo.jpeg";
 import bookCover from "../assets/bookcover-front.png";
 
 export const Route = createFileRoute("/")({
