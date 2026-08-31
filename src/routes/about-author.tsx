@@ -98,7 +98,7 @@ function AboutAuthorPage() {
           <p style={{ maxWidth: 620, margin: "16px auto 30px", color: "var(--parchment)" }}>
             Follow Janice for updates on new releases, reflections on faith, and more.
           </p>
-          <Link to="/contact" className="btn-ghost-gold">Contact Janice</Link>
+          <Link to="/contact" className="btn btn-amazon">Contact Janice</Link>
         </ScrollReveal>
       </section>
     </>
