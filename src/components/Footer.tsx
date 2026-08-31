@@ -41,7 +41,7 @@ export default function Footer() {
           <img src={bookCover} alt="Life from the Mountain book cover" className="footer-book-thumb" />
           <ul style={{ marginTop: 14 }}>
             <li><a href="https://amazon.com" target="_blank" rel="noreferrer">Buy on Amazon <span className="arrow">›</span></a></li>
-            <li><a href="#buy-direct">Buy Directly <span className="arrow">›</span></a></li>
+            
           </ul>
         </div>
 

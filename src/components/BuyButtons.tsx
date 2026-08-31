@@ -4,9 +4,6 @@ interface BuyButtonsProps {
   link?: string;
 }
 
-const DEFAULT_AMAZON_LINK =
-  "https://www.amazon.com/Time-No-End-Janice-Flowers-ebook/dp/B096X745J8/ref=sr_1_1?crid=38GJ6RNCC7YZF&dib=eyJ2IjoiMSJ9.CSilix9fwAHEpTLLT0NZkQ.8_Fq1judwXL4sp6hb0GhKEuGoJwts7E4GTzgh_rqsLg&dib_tag=se&keywords=A+time+with+no+end+janice+flowers&qid=1787678178&s=books&sprefix=a+time+with+no+end+janice+flowers%2Cstripbooks-intl-ship%2C356&sr=1-1";
-
 function ripple(e: MouseEvent<HTMLAnchorElement>) {
   const target = e.currentTarget;
   const r = target.getBoundingClientRect();
@@ -27,18 +24,27 @@ function ripple(e: MouseEvent<HTMLAnchorElement>) {
   }, 700);
 }
 
-export default function BuyButtons({ link = DEFAULT_AMAZON_LINK }: BuyButtonsProps) {
+export default function BuyButtons({ link }: BuyButtonsProps) {
   return (
     <div>
-      <a
-        href={link}
-        target="_blank"
-        rel="noreferrer"
-        className="btn btn-amazon "
-        onClick={ripple}
-      >
-        Buy on Amazon
-      </a>
+      {link ? (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-amazon"
+          onClick={ripple}
+        >
+          Buy on Amazon
+        </a>
+      ) : (
+        <button
+          className="btn btn-amazon"
+          disabled
+        >
+          Coming Soon
+        </button>
+      )}
     </div>
   );
 }
