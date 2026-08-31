@@ -135,73 +135,127 @@ function HomePage() {
         </div>
       </section> */}
 
-      <section className="section section-warm-gradient">
+<section className="section section-warm-gradient">
 
   <ScrollReveal>
     <div className="pull-quote">
-      <div className="pull-quote-text">No hurt is beyond His healing.</div>
+      <div className="pull-quote-text">
+        No hurt is beyond His healing.
+      </div>
     </div>
   </ScrollReveal>
 
   <div className="synopsis-wrap">
     <div className="synopsis-sidelabel">Synopsis</div>
+
     <div>
       <ScrollReveal>
         <p className="synopsis-body">
-          Life from the Mountain is a heartfelt story of redemption, weaving together Christian faith, historical fiction, and emotional healing set against the quiet beauty and hard realities of mountain life. It follows two wounded souls whose paths cross and whose lives are slowly, tenderly transformed by God's grace. Set among misty ridgelines and a weathered mountain home, this is a story about second chances, the courage to begin again, and the belief that no life is ever beyond His purpose.
+          Life from the Mountain is a heartfelt story of redemption,
+          weaving together Christian faith, historical fiction, and
+          emotional healing set against the quiet beauty and hard
+          realities of mountain life. It follows two wounded souls whose
+          paths cross and whose lives are slowly, tenderly transformed by
+          God's grace. Set among misty ridgelines and a weathered mountain
+          home, this is a story about second chances, the courage to begin
+          again, and the belief that no life is ever beyond His purpose.
         </p>
       </ScrollReveal>
-      {/* <ScrollReveal delay={1}>
-        <div className="mini-cover">
-          <img src={bookCover} alt="Life from the Mountain cover" />
-        </div>
-      </ScrollReveal> */}
     </div>
   </div>
 
-  {/* ===== Cover Journey ===== */}
+  {/* ===== Books by Janice Flowers ===== */}
   <ScrollReveal delay={1}>
-    <div className="cover-journey">
-      <h3 className="cover-journey-heading">The Cover Journey</h3>
-      <p className="cover-journey-subtitle">From the original edition to the current design</p>
+    <div className="author-books">
 
-      <div className="cover-journey-row">
-        <div className="cover-journey-item">
-          <div className="cover-journey-cover original">
-            <img
-              src={oldBookCover}
-              alt="Original edition cover of Life from the Mountain"
-              loading="lazy"
-            />
-          </div>
-          <p className="cover-journey-label">Original Edition</p>
-        </div>
+      <div className="author-books-header">
+        <span className="author-books-eyebrow">
+          Books by Janice Flowers
+        </span>
 
-        <div className="cover-journey-arrow" aria-hidden="true">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <h3 className="author-books-heading">
+          Stories of Faith, Hope & Redemption
+        </h3>
+
+        <p className="author-books-subtitle">
+          Discover Janice Flowers&apos; published work and her upcoming novel.
+        </p>
+      </div>
+
+      <div className="author-books-row">
+
+        {/* A Time With No End */}
+        <article className="author-book-card">
+          <a
+            href="https://www.amazon.com/Time-No-End-Janice-Flowers-ebook/dp/B096X745J8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="author-book-cover-link"
+            aria-label="View A Time With No End on Amazon"
           >
-            <path d="M5 12h13M13 6l6 6-6 6" />
-          </svg>
-        </div>
+            <div className="author-book-cover">
+              <img
+                src={oldBookCover}
+                alt="A Time With No End by Janice Flowers"
+                loading="lazy"
+              />
 
-        <div className="cover-journey-item current">
-          <div className="cover-journey-cover current">
+              <span className="book-status available">
+                Available Now
+              </span>
+            </div>
+          </a>
+
+          <div className="author-book-info">
+            <h4>A Time With No End</h4>
+
+            <p className="author-book-description">
+              A story of faith tested through life&apos;s hardest moments,
+              discovering the strength to trust God and believe in His
+              timeless promises.
+            </p>
+
+            <a
+              href="https://www.amazon.com/Time-No-End-Janice-Flowers-ebook/dp/B096X745J8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-amazon-link"
+            >
+              View on Amazon
+              <span aria-hidden="true"> →</span>
+            </a>
+          </div>
+        </article>
+
+
+        {/* Life from the Mountain */}
+        <article className="author-book-card featured-book">
+          <div className="author-book-cover">
             <img
               src={bookCover}
-              alt="Current edition cover of Life from the Mountain"
+              alt="Life from the Mountain by Janice Flowers"
               loading="lazy"
             />
+
+            <span className="book-status coming-soon">
+              Coming Soon
+            </span>
           </div>
-          <p className="cover-journey-label">Current Edition</p>
-        </div>
+
+          <div className="author-book-info">
+            <h4>Life from the Mountain</h4>
+
+            <p className="author-book-description">
+              A heartfelt story of redemption, second chances, Christian
+              faith, and healing amid the quiet beauty of mountain life.
+            </p>
+
+            <span className="book-coming-text">
+              Coming Soon
+            </span>
+          </div>
+        </article>
+
       </div>
     </div>
   </ScrollReveal>

@@ -1338,3 +1338,233 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     transform: rotate(90deg);
   }
 }
+
+/* ============================================================
+   BOOKS BY JANICE FLOWERS
+   ============================================================ */
+
+.author-books {
+  max-width: 900px;
+  margin: 75px auto 0;
+  padding-top: 55px;
+  border-top: 1px solid rgba(27, 42, 71, 0.18);
+}
+
+.author-books-header {
+  max-width: 680px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.author-books-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+
+  font-family: var(--font-sub);
+  color: var(--crimson);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.author-books-heading {
+  font-family: var(--font-display);
+  color: var(--navy-deep);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.author-books-subtitle {
+  font-family: var(--font-sub);
+  color: var(--navy-soft);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.author-books-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(30px, 6vw, 65px);
+
+  max-width: 760px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.author-book-card {
+  text-align: center;
+}
+
+.author-book-cover-link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.author-book-cover {
+  position: relative;
+
+  width: min(220px, 100%);
+  margin: 0 auto 22px;
+
+  padding: 8px;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    var(--gold-amber),
+    var(--gold-light)
+  );
+
+  box-shadow:
+    0 15px 30px rgba(27, 42, 71, 0.18),
+    0 0 24px rgba(232, 169, 76, 0.3);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.author-book-cover:hover {
+  transform: translateY(-7px);
+  box-shadow:
+    0 22px 38px rgba(27, 42, 71, 0.24),
+    0 0 32px rgba(232, 169, 76, 0.48);
+}
+
+.author-book-cover img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.featured-book .author-book-cover {
+  box-shadow:
+    0 18px 36px rgba(122, 46, 46, 0.2),
+    0 0 34px rgba(232, 169, 76, 0.55);
+}
+
+
+/* STATUS BADGES */
+
+.book-status {
+  position: absolute;
+  top: 14px;
+  right: -12px;
+
+  padding: 7px 14px;
+  border-radius: 999px;
+
+  font-family: var(--font-sub);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.16);
+}
+
+.book-status.available {
+  background: var(--forest-green-deep);
+  color: var(--parchment-light);
+}
+
+.book-status.coming-soon {
+  background: var(--crimson);
+  color: var(--parchment-light);
+}
+
+
+/* BOOK TEXT */
+
+.author-book-info {
+  max-width: 310px;
+  margin: 0 auto;
+}
+
+.author-book-info h4 {
+  font-family: var(--font-display);
+  color: var(--navy-deep);
+
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.author-book-description {
+  color: var(--navy-soft);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 17px;
+}
+
+
+/* AMAZON LINK */
+
+.book-amazon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding-bottom: 3px;
+
+  font-family: var(--font-sub);
+  color: var(--crimson);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid var(--crimson);
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.book-amazon-link:hover {
+  color: var(--navy-deep);
+  gap: 9px;
+}
+
+
+/* COMING SOON TEXT */
+
+.book-coming-text {
+  display: inline-block;
+
+  font-family: var(--font-sub);
+  color: var(--crimson);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 620px) {
+
+  .author-books {
+    margin-top: 55px;
+    padding-top: 42px;
+  }
+
+  .author-books-row {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .author-book-cover {
+    width: min(200px, 68vw);
+  }
+
+  .book-status {
+    right: -8px;
+  }
+
+}
