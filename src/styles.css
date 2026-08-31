@@ -1137,3 +1137,204 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-align: center;
 }
 .cta-card h3 { font-family: var(--font-display); color: var(--navy-deep); font-size: 1.6rem; margin-bottom: 16px; }
+
+
+/* ===== Cover Journey ===== */
+.cover-journey {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin: 4.5rem auto 1.5rem;
+  max-width: 880px;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.cover-journey-heading {
+  font-family: var(--font-display); /* Playfair Display */
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--navy-deep);
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cover-journey-subtitle {
+  font-family: var(--font-sub); /* Cormorant Garamond */
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--crimson);
+  margin: 0.15rem 0 0.75rem;
+}
+
+.cover-journey-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.cover-journey-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cover-journey-cover {
+  position: relative;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  background: transparent; /* no disconnected white card */
+  box-shadow:
+    0 14px 34px -16px rgba(20, 24, 40, 0.55),
+    0 0 0 1px rgba(201, 162, 39, 0.28);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease, opacity 0.45s ease;
+  will-change: transform;
+}
+
+.cover-journey-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* faint inner gold frame */
+.cover-journey-cover::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(201, 162, 39, 0.42);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* Original — receded, archival */
+.cover-journey-cover.original {
+  width: clamp(150px, 22vw, 210px);
+  opacity: 0.86;
+  filter: saturate(0.9) contrast(0.97);
+  box-shadow:
+    0 12px 30px -18px rgba(20, 24, 40, 0.5),
+    0 0 0 1px rgba(201, 162, 39, 0.22);
+}
+
+/* Current — larger, prominent, stronger gold glow */
+.cover-journey-cover.current {
+  width: clamp(190px, 30vw, 285px);
+  box-shadow:
+    0 22px 50px -20px rgba(20, 24, 40, 0.6),
+    0 0 0 1px rgba(201, 162, 39, 0.5),
+    0 0 26px -4px rgba(201, 162, 39, 0.42);
+}
+
+/* gentle hover lift — original */
+.cover-journey-cover.original:hover {
+  transform: translateY(-6px);
+  opacity: 1;
+  box-shadow:
+    0 18px 38px -18px rgba(20, 24, 40, 0.55),
+    0 0 0 1px rgba(201, 162, 39, 0.34);
+}
+
+/* gentle hover lift — current, slightly stronger */
+.cover-journey-cover.current:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 28px 60px -20px rgba(20, 24, 40, 0.62),
+    0 0 0 1px rgba(201, 162, 39, 0.6),
+    0 0 36px -2px rgba(201, 162, 39, 0.5);
+}
+
+.cover-journey-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: clamp(46px, 7vw, 84px);
+  height: 1.5rem;
+  color: var(--gold-amber);
+  opacity: 0.9;
+}
+
+.cover-journey-arrow::before,
+.cover-journey-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 42%;
+}
+.cover-journey-arrow::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(201, 162, 39, 0) 0%,
+    var(--gold-amber) 100%
+  );
+}
+.cover-journey-arrow::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(201, 162, 39, 0) 0%,
+    var(--gold-amber) 100%
+  );
+}
+.cover-journey-arrow svg {
+  position: relative;
+  z-index: 1;
+}
+
+.cover-journey-label {
+  position: relative;
+  font-family: var(--font-sub); /* Cormorant Garamond */
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy-deep);
+  margin: 0;
+  padding-bottom: 0.4rem;
+}
+
+.cover-journey-label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 1px;
+  background: var(--crimson);
+  opacity: 0.7;
+}
+
+.cover-journey-item.current .cover-journey-label {
+  color: var(--crimson);
+}
+
+/* ===== Responsive — stack vertically at 620px ===== */
+@media (max-width: 620px) {
+  .cover-journey-row {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  /* rotate the connector so the chevron points down */
+  .cover-journey-arrow {
+    transform: rotate(90deg);
+  }
+}

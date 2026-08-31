@@ -7,7 +7,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import MessageFromAuthor from "../components/MessageFromAuthor";
 import authorPhoto from "../assets/author-photo.jpeg";
 import bookCover from "../assets/bookcover-front.png";
-
+import oldBookCover from "../assets/book_image.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -114,7 +114,7 @@ function HomePage() {
       </section>
 
       {/* SECTION 5 - SYNOPSIS DEEP DIVE */}
-      <section className="section section-warm-gradient">
+      {/* <section className="section section-warm-gradient">
         <ScrollReveal>
           <div className="pull-quote">
             <div className="pull-quote-text">No hurt is beyond His healing.</div>
@@ -133,7 +133,81 @@ function HomePage() {
             </ScrollReveal>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <section className="section section-warm-gradient">
+
+  <ScrollReveal>
+    <div className="pull-quote">
+      <div className="pull-quote-text">No hurt is beyond His healing.</div>
+    </div>
+  </ScrollReveal>
+
+  <div className="synopsis-wrap">
+    <div className="synopsis-sidelabel">Synopsis</div>
+    <div>
+      <ScrollReveal>
+        <p className="synopsis-body">
+          Life from the Mountain is a heartfelt story of redemption, weaving together Christian faith, historical fiction, and emotional healing set against the quiet beauty and hard realities of mountain life. It follows two wounded souls whose paths cross and whose lives are slowly, tenderly transformed by God's grace. Set among misty ridgelines and a weathered mountain home, this is a story about second chances, the courage to begin again, and the belief that no life is ever beyond His purpose.
+        </p>
+      </ScrollReveal>
+      {/* <ScrollReveal delay={1}>
+        <div className="mini-cover">
+          <img src={bookCover} alt="Life from the Mountain cover" />
+        </div>
+      </ScrollReveal> */}
+    </div>
+  </div>
+
+  {/* ===== Cover Journey ===== */}
+  <ScrollReveal delay={1}>
+    <div className="cover-journey">
+      <h3 className="cover-journey-heading">The Cover Journey</h3>
+      <p className="cover-journey-subtitle">From the original edition to the current design</p>
+
+      <div className="cover-journey-row">
+        <div className="cover-journey-item">
+          <div className="cover-journey-cover original">
+            <img
+              src={oldBookCover}
+              alt="Original edition cover of Life from the Mountain"
+              loading="lazy"
+            />
+          </div>
+          <p className="cover-journey-label">Original Edition</p>
+        </div>
+
+        <div className="cover-journey-arrow" aria-hidden="true">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 12h13M13 6l6 6-6 6" />
+          </svg>
+        </div>
+
+        <div className="cover-journey-item current">
+          <div className="cover-journey-cover current">
+            <img
+              src={bookCover}
+              alt="Current edition cover of Life from the Mountain"
+              loading="lazy"
+            />
+          </div>
+          <p className="cover-journey-label">Current Edition</p>
+        </div>
+      </div>
+    </div>
+  </ScrollReveal>
+
+</section>
+
 
       {/* SECTION 6 - MESSAGE FROM JANICE */}
       <MessageFromAuthor />
