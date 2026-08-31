@@ -4,13 +4,17 @@ import Book3DTilt from "../components/Book3DTilt";
 import BuyButtons from "../components/BuyButtons";
 import PlatformTicker from "../components/PlatformTicker";
 import ScrollReveal from "../components/ScrollReveal";
-import bookCover from "../assets/bookcover-front.png";
+import Book3DTilt2 from "@/components/Book3DTilt2";
 
 export const Route = createFileRoute("/about-book")({
   head: () => ({
     meta: [
       { title: "Life from the Mountain | Christian Novel by Janice Flowers" },
-      { name: "description", content: "About Life from the Mountain, a story of redemption, faith, and new beginnings. Discover the themes, setting, and where to buy." },
+      {
+        name: "description",
+        content:
+          "About Life from the Mountain, a story of redemption, faith, and new beginnings. Discover the themes, setting, and where to buy.",
+      },
     ],
   }),
   component: AboutBookPage,
@@ -26,17 +30,45 @@ const details = [
 ];
 
 const themes = [
-  { icon: "✝", title: "Faith and God's Grace", desc: "A quiet, honest look at God's presence in every season of life." },
-  { icon: "☀", title: "Redemption and Second Chances", desc: "Every heart, no matter how wounded, can begin again." },
-  { icon: "♥", title: "Emotional Healing", desc: "A tender exploration of grief, trust, and being made new." },
-  { icon: "✦", title: "New Beginnings", desc: "The courage to walk into what God is quietly building." },
+  {
+    icon: "✝",
+    title: "Faith and God's Grace",
+    desc: "A quiet, honest look at God's presence in every season of life.",
+  },
+  {
+    icon: "☀",
+    title: "Redemption and Second Chances",
+    desc: "Every heart, no matter how wounded, can begin again.",
+  },
+  {
+    icon: "♥",
+    title: "Emotional Healing",
+    desc: "A tender exploration of grief, trust, and being made new.",
+  },
+  {
+    icon: "✦",
+    title: "New Beginnings",
+    desc: "The courage to walk into what God is quietly building.",
+  },
 ];
 
 const reviews = [
-  { text: "A beautifully written story of grace that stayed with me long after I finished it.", name: "A Reader" },
-  { text: "Janice writes with such honesty about pain and healing. This book is a gift.", name: "Book Club Reader" },
-  { text: "A quiet, powerful reminder that God's grace reaches every corner of our lives.", name: "Early Reader Review" },
-  { text: "The mountain setting and the faith woven through every chapter made me feel at home.", name: "Verified Reader" },
+  {
+    text: "A beautifully written story of grace that stayed with me long after I finished it.",
+    name: "A Reader",
+  },
+  {
+    text: "Janice writes with such honesty about pain and healing. This book is a gift.",
+    name: "Book Club Reader",
+  },
+  {
+    text: "A quiet, powerful reminder that God's grace reaches every corner of our lives.",
+    name: "Early Reader Review",
+  },
+  {
+    text: "The mountain setting and the faith woven through every chapter made me feel at home.",
+    name: "Verified Reader",
+  },
 ];
 
 function AboutBookPage() {
@@ -56,7 +88,37 @@ function AboutBookPage() {
         <div className="two-col">
           <ScrollReveal direction="left">
             <div className="section-eyebrow">Full Synopsis</div>
-            <h2 className="section-title">The Story</h2>
+            <h2 className="section-title">Life From The Mountain</h2>
+            <div className="genre-pills">
+              <span className="genre-pill">Christian Fiction</span>
+              <span className="genre-pill">Inspirational Fiction</span>
+              <span className="genre-pill">Faith and Trust in God</span>
+              <span className="genre-pill">Hope and Restoration</span>
+            </div>
+            <p className="prose">
+              Life from the Mountain is a heartfelt story of redemption, weaving together Christian
+              faith, historical fiction, and emotional healing set against the quiet beauty and hard
+              realities of mountain life. It follows two wounded souls whose paths cross and whose
+              lives are slowly, tenderly transformed by God's grace. Set among misty ridgelines and
+              a weathered mountain home, this is a story about second chances, the courage to begin
+              again, and the belief that no life is ever beyond His purpose.
+            </p>
+            <BuyButtons/>
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <Book3DTilt />
+          </ScrollReveal>
+          
+        </div>
+      </section>
+      <section className="section section-parchment">
+        <div className="two-col-reverse">
+          <ScrollReveal direction="left">
+            <Book3DTilt2 />
+          </ScrollReveal>
+          <ScrollReveal direction="right">
+            <div className="section-eyebrow">Full Synopsis</div>
+            <h2 className="section-title">A Time With No End</h2>
             <div className="genre-pills">
               <span className="genre-pill">Christian Fiction</span>
               <span className="genre-pill">Historical Fiction</span>
@@ -64,13 +126,16 @@ function AboutBookPage() {
               <span className="genre-pill">Faith-Based Storytelling</span>
             </div>
             <p className="prose">
-              Life from the Mountain is a heartfelt story of redemption, weaving together Christian faith, historical fiction, and emotional healing set against the quiet beauty and hard realities of mountain life. It follows two wounded souls whose paths cross and whose lives are slowly, tenderly transformed by God's grace. Set among misty ridgelines and a weathered mountain home, this is a story about second chances, the courage to begin again, and the belief that no life is ever beyond His purpose.
+              This book is about a girl that has her faith and belief tested in a hard way. She
+              learns how to hang on to God in the most difficult times in her life and finds that
+              she has the ability to trust God, even in the hard times. He teaches her not only is
+              he her God, but he also reveals how strong he is! And she learns that God can multiply
+              good things for her and restores her faith in him and her friends! A Time with No
+              EndaEUR"his words are timeless. When he speaks them, they never end, but they bring
+              life!What does it mean if you describe something as timeless? You mean that it is so
+              good or beautiful that it cannot be affected by changes in society or fashion!{" "}
             </p>
-          </ScrollReveal>
-          <ScrollReveal direction="right">
-            <div className="mini-cover" style={{ width: "min(320px, 80%)", margin: "0 auto" }}>
-              <img src={bookCover} alt="Life from the Mountain cover" />
-            </div>
+            <BuyButtons link="https://www.amazon.com/Time-No-End-Janice-Flowers-ebook/dp/B096X745J8"/>
           </ScrollReveal>
         </div>
       </section>
@@ -86,8 +151,15 @@ function AboutBookPage() {
           {details.map((d, i) => (
             <ScrollReveal key={d.k} delay={((i % 3) + 1) as 1 | 2 | 3}>
               <div className="feature-card">
-                <div className="section-eyebrow" style={{ marginBottom: 8 }}>{d.k}</div>
-                <p className="feature-desc" style={{ fontSize: "1.05rem", color: "var(--navy-deep)" }}>{d.v}</p>
+                <div className="section-eyebrow" style={{ marginBottom: 8 }}>
+                  {d.k}
+                </div>
+                <p
+                  className="feature-desc"
+                  style={{ fontSize: "1.05rem", color: "var(--navy-deep)" }}
+                >
+                  {d.v}
+                </p>
               </div>
             </ScrollReveal>
           ))}
@@ -144,7 +216,9 @@ function AboutBookPage() {
         <PlatformTicker />
         <div className="section-center" style={{ marginTop: 40 }}>
           <BuyButtons />
-          <p style={{ marginTop: 18, color: "var(--parchment)", fontStyle: "italic", opacity: .8 }}>
+          <p
+            style={{ marginTop: 18, color: "var(--parchment)", fontStyle: "italic", opacity: 0.8 }}
+          >
             Available in paperback and eBook formats
           </p>
         </div>

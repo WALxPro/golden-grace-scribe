@@ -74,6 +74,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600; letter-spacing: 0.15em; font-size: 14px;
   text-transform: uppercase; border-radius: 999px;
   transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
+  cursor: pointer;
 }
 
 .btn-amazon {
@@ -348,19 +349,47 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section-center { text-align: center; }
 
 /* ===== BOOK SHOWCASE ===== */
+/* ===== Layout 1: Content Left | Image Right ===== */
 .two-col {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 70px;
-  align-items: center; max-width: 1200px; margin: 0 auto;
-}
-@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; gap: 50px; } }
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(60px, 8vw, 120px);
+  align-items: center;
 
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+
+/* ===== Layout 2: Image Left | Content Right ===== */
+.two-col-reverse {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(60px, 8vw, 120px);
+  align-items: center;
+
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+
+/* ===== Mobile / Tablet ===== */
+@media (max-width: 900px) {
+  .two-col,
+  .two-col-reverse {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    width: min(760px, 92%);
+  }
+}
 .book-tilt-wrap {
   perspective: 1200px;
   display: flex; justify-content: center;
+  margin: 0 auto;
 }
 .book-tilt {
   position: relative;
-  width: min(360px, 80%);
+  width: min(360px, 100%);
   transform-style: preserve-3d;
   transition: transform .3s ease;
 }
@@ -405,7 +434,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .stars { color: var(--gold-amber); font-size: 22px; letter-spacing: 4px; margin: 6px 0 22px; }
 
-.prose { font-size: 1.05rem; color: var(--navy-soft); }
+.prose { font-size: 1.05rem; color: var(--navy-soft); margin-bottom: 20px; }
 .prose p + p { margin-top: 14px; }
 
 /* ===== PLATFORM TICKER ===== */
@@ -1567,4 +1596,51 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     right: -8px;
   }
 
+}
+
+.book-tilt {
+  position: relative;
+}
+
+.book-tilt-badge {
+  position: absolute;
+  top: 16px;
+  right: -12px;
+  z-index: 5;
+
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  
+
+  font-family: var(--font-sub);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 6px 16px rgba(122, 46, 46, 0.3),
+    0 0 20px rgba(232, 169, 76, 0.3);
+
+  pointer-events: none;
+}
+
+.book-tilt-bagdge-coming{
+  background: var(--crimson);
+  color: var(--parchment-light);
+}
+.book-tilt-bagdge-avaliable{
+    background: var(--forest-green-deep);
+  color: var(--parchment-light);
+}
+
+
+@media (max-width: 560px) {
+  .book-tilt-badge {
+    top: 12px;
+    right: -8px;
+    padding: 7px 12px;
+    font-size: 10px;
+  }
 }
