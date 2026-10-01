@@ -230,6 +230,13 @@ function HomePage() {
 
         {/* Life from the Mountain */}
         <article className="author-book-card featured-book">
+          <a
+            href="https://www.amazon.com/Life-Mountain-Story-Redemption-Beginnings/dp/B0HKV55BT9/ref=sr_1_1?crid=PWSNAC9WCJP1&dib=eyJ2IjoiMSJ9.paeEnPLu41z7Qj3rywXenNhRrA9OdFm-p0pjP_GHDtQ600ima8eLfbz5o-MNgQbWTM-15FkM_z8dbgg51E2IUDK9dryuJCVHKlWIrGgeQpKBGXER430M9-cF2eyHaHxE-AG2rqF-GwVpuf802XmDoHzYfmV3Gjt9eTp4bwuUpmBhdcESiP0r9xjoe2qxH79NRLqt33stQrHt5L5cJ1uOTlZGCjb_1DqI8TiJn8JF49s.iFRHjanaIsvCS4XOfoOYwauZb-1ovOBbXr2uUU3aqCE&dib_tag=se&keywords=life+from+the+mountain&qid=1790806471&s=books&sprefix=life+from+the+mountain%2Cstripbooks-intl-ship%2C348&sr=1-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="author-book-cover-link"
+            aria-label="View A Time With No End on Amazon"
+          >
           <div className="author-book-cover">
             <img
               src={bookCover}
@@ -237,10 +244,11 @@ function HomePage() {
               loading="lazy"
             />
 
-            <span className="book-status coming-soon">
-              Coming Soon
-            </span>
+            <span className="book-status available">
+                Available Now
+              </span>
           </div>
+          </a>
 
           <div className="author-book-info">
             <h4>Life from the Mountain</h4>
@@ -249,10 +257,16 @@ function HomePage() {
               A heartfelt story of redemption, second chances, Christian
               faith, and healing amid the quiet beauty of mountain life.
             </p>
-
-            <span className="book-coming-text">
-              Coming Soon
-            </span>
+            
+               <a
+              href="https://www.amazon.com/Life-Mountain-Story-Redemption-Beginnings/dp/B0HKV55BT9/ref=sr_1_1?crid=PWSNAC9WCJP1&dib=eyJ2IjoiMSJ9.paeEnPLu41z7Qj3rywXenNhRrA9OdFm-p0pjP_GHDtQ600ima8eLfbz5o-MNgQbWTM-15FkM_z8dbgg51E2IUDK9dryuJCVHKlWIrGgeQpKBGXER430M9-cF2eyHaHxE-AG2rqF-GwVpuf802XmDoHzYfmV3Gjt9eTp4bwuUpmBhdcESiP0r9xjoe2qxH79NRLqt33stQrHt5L5cJ1uOTlZGCjb_1DqI8TiJn8JF49s.iFRHjanaIsvCS4XOfoOYwauZb-1ovOBbXr2uUU3aqCE&dib_tag=se&keywords=life+from+the+mountain&qid=1790806471&s=books&sprefix=life+from+the+mountain%2Cstripbooks-intl-ship%2C348&sr=1-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-amazon-link"
+            >
+              View on Amazon
+              <span aria-hidden="true"> →</span>
+            </a>
           </div>
         </article>
 

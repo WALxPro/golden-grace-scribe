@@ -47,9 +47,9 @@ export default function Book3DTilt({ size = 360 }: { size?: number }) {
           alt="Life from the Mountain book cover"
         />
 
-        <span className="book-tilt-badge book-tilt-bagdge-coming">
-          Coming Soon
-        </span>
+       <span className="book-status available">
+                Available Now
+              </span>
 
         <div className="shimmer" />
       </div>

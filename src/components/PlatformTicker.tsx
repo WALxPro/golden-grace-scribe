@@ -5,6 +5,12 @@ const platforms = [
   "Kobo",
   "Google Play Books",
   "Paperback Edition",
+  "Amazon Kindle",
+  "Barnes and Noble",
+  "Apple Books",
+  "Kobo",
+  "Google Play Books",
+  "Paperback Edition",
 ];
 
 export default function PlatformTicker() {
